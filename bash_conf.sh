@@ -117,11 +117,20 @@ if ! shopt -oq posix; then
 fi
 
 #                  >>------------- CUSTOM CONFIGURATION -------------<<<
+
 neofetch # run neofetch on new terminal # sudo apt install neofetch
+
 bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT="$HOME/.pyenv"
+
 # before installing python versions run this (dependencies - supporting software - required packages):
 # --> sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 # --> sudo apt install python3-tk tk-dev tk8.6-dev libsqlite3-dev
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# atuin # shell history 
+# --> curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+. "$HOME/.atuin/bin/env"
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
