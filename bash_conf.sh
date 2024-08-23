@@ -116,3 +116,4 @@ if ! shopt -oq posix; then
   fi
 fi
 #1
+neofetch # run neofetch on new terminal
