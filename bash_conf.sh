@@ -117,3 +117,4 @@ if ! shopt -oq posix; then
 fi
 #1
 neofetch # run neofetch on new terminal
+bind 'set completion-ignore-case on' # case insensitive tabbing
