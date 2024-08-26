@@ -118,6 +118,9 @@ fi
 
 #                  >>------------- CUSTOM CONFIGURATION -------------<<<
 
+# load all alias shortcuts
+source aliases.sh # first download from repo: 'linux-conf'
+
 neofetch # run neofetch on new terminal # sudo apt install neofetch
 
 bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT="$HOME/.pyenv"
