@@ -7,3 +7,4 @@ sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-
 sudo apt install python3-tk tk-dev tk8.6-dev libsqlite3-dev
 brew install pyenv
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+sudo apt install neofetch

@@ -119,6 +119,7 @@ fi
 #                  >>------------- CUSTOM CONFIGURATION -------------<<<
 
 # load all alias shortcuts
+# add execute permissions: chmod +x aliases.sh
 source aliases.sh # first download from repo: 'linux-conf'
 
 neofetch # run neofetch on new terminal # sudo apt install neofetch
@@ -152,4 +153,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# inform support for 256 colors
+export TERM=xterm-256color 
 
