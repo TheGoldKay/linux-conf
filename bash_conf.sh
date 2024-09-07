@@ -157,3 +157,8 @@ unset __conda_setup
 # inform support for 256 colors
 export TERM=xterm-256color 
 
+# HOME BREW
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+conda config --set changeps1 false
