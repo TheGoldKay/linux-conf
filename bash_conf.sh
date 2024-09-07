@@ -118,10 +118,6 @@ fi
 
 #                  >>------------- CUSTOM CONFIGURATION -------------<<<
 
-# load all alias shortcuts
-# add execute permissions: chmod +x aliases.sh
-source aliases.sh # first download from repo: 'linux-conf'
-
 neofetch # run neofetch on new terminal # sudo apt install neofetch
 
 bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT="$HOME/.pyenv"
@@ -162,3 +158,12 @@ export TERM=xterm-256color
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 conda config --set changeps1 false
+
+# -------------- ALIASES WILL BE KEPT AT THE END --------------
+
+alias cconda='conda info --envs'
+alias show="ps aux"
+alias gs="git status"
+alias ga="git add ."
+alias gc="git commit -m "
+alias processes="watch -n 1 \"ps aux --sort=-start_time | grep -vE 'watch|ps|head|grep' | head -n 20\""

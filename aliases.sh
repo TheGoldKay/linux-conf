@@ -1,5 +1,0 @@
-alias show="ps aux"
-alias gs="git status"
-alias ga="git add ."
-alias gc="git commit -m "
-alias processes="watch -n 1 \"ps aux --sort=-start_time | grep -vE 'watch|ps|head|grep' | head -n 20\""
