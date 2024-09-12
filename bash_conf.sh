@@ -125,9 +125,9 @@ bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT
 # before installing python versions run this (dependencies - supporting software - required packages):
 # --> sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 # --> sudo apt install python3-tk tk-dev tk8.6-dev libsqlite3-dev
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 # atuin # shell history 
 # --> curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
@@ -154,10 +154,10 @@ unset __conda_setup
 export TERM=xterm-256color 
 
 # HOME BREW
-
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-conda config --set changeps1 false
+# choose to display the current python  environment
+#conda config --set changeps1 false # true otherwise
 
 # -------------- ALIASES WILL BE KEPT AT THE END --------------
 
