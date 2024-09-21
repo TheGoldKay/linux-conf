@@ -15,3 +15,4 @@ brew install pyenv
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 sudo apt install neofetch
 sudo apt install micro # a better text editor than nano
+sudo apt install nala # a better way of doing 'apt'
