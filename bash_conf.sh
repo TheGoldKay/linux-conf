@@ -115,51 +115,36 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+                                                        ### NEW CUSTOM IN MINT LINUX ####
 
-#                  >>------------- CUSTOM CONFIGURATION -------------<<<
-
-neofetch # run neofetch on new terminal # sudo apt install neofetch
+neofetch # run neofetch on new terminal
 
 bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT="$HOME/.pyenv"
 
-# before installing python versions run this (dependencies - supporting software - required packages):
-# --> sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
-# --> sudo apt install python3-tk tk-dev tk8.6-dev libsqlite3-dev
-#export PYENV_ROOT="$HOME/.pyenv"
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
-
-# atuin # shell history 
-# --> curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-. "$HOME/.atuin/bin/env"
-[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
-eval "$(atuin init bash)"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/jade/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/goldkay/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/jade/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/jade/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/goldkay/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/goldkay/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/jade/miniconda3/bin:$PATH"
+        export PATH="/home/goldkay/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# inform support for 256 colors
-export TERM=xterm-256color 
 
-# HOME BREW
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# >>>> autin (shell history) init >>>>
+. "$HOME/.atuin/bin/env"
 
-# choose to display the current python  environment
-#conda config --set changeps1 false # true otherwise
+[[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
+eval "$(atuin init bash)"
+# <<<< autin (shell history) init <<<<
 
-# -------------- ALIASES WILL BE KEPT AT THE END --------------
+# -------------- ALIASES WILL BE KEPT AT THE END -------------- #
 
 alias cconda='conda info --envs'
 alias show="ps aux"
