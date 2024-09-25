@@ -9,3 +9,7 @@ sudo nala install gparted # a partition manager
 # some python & dev dependencies
 sudo nala install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev wget
 sudo nala install python3-tk tk-dev tk8.6-dev libsqlite3-dev
+# steam
+sudo add-apt-repository multiverse
+sudo nala update
+sudo nala install steam
