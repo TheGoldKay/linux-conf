@@ -144,6 +144,11 @@ unset __conda_setup
 eval "$(atuin init bash)"
 # <<<< autin (shell history) init <<<<
 
+# ----> ADDED PATHS TO GLOBAL <------
+
+export PATH=$PATH:/home/goldkay/.local/bin
+eval "$(zoxide init bash)"
+
 # -------------- ALIASES WILL BE KEPT AT THE END -------------- #
 
 alias cconda='conda info --envs'
@@ -153,3 +158,4 @@ alias ga="git add ."
 alias gc="git commit -m "
 alias processes="watch -n 1 \"ps aux --sort=-start_time | grep -vE 'watch|ps|head|grep' | head -n 20\""
 alias android="ssh -p 8022 u0_a129@192.168.0.103"
+alias off="sudo nala update && sudo nala upgrade && shutdown -P now"

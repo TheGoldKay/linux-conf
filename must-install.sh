@@ -13,3 +13,6 @@ sudo nala install python3-tk tk-dev tk8.6-dev libsqlite3-dev
 sudo add-apt-repository multiverse
 sudo nala update
 sudo nala install steam
+# zoxide -> a better cd experience
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+sudo nala install fzf # add on for zoxide
