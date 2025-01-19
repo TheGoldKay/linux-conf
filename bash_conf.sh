@@ -115,7 +115,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-                                                        ### NEW CUSTOM IN MINT LINUX ####
+##############################  >>> NEW CUSTOM IN MINT LINUX <<<
 
 neofetch # run neofetch on new terminal
 
@@ -146,16 +146,20 @@ eval "$(atuin init bash)"
 
 # ----> ADDED PATHS TO GLOBAL <------
 
-export PATH=$PATH:/home/goldkay/.local/bin
+# >>>> zoxide init >>>>
+export PATH=$PATH:$HOME/.local/bin
 eval "$(zoxide init bash)"
+
+# homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# cargo (RUST BINARIES)
+export PATH=$PATH:$HOME/.cargo/bin
 
 # -------------- ALIASES WILL BE KEPT AT THE END -------------- #
 
-alias cconda='conda info --envs'
-alias show="ps aux"
-alias gs="git status"
-alias ga="git add ."
-alias gc="git commit -m "
-alias processes="watch -n 1 \"ps aux --sort=-start_time | grep -vE 'watch|ps|head|grep' | head -n 20\""
-alias android="ssh -p 8022 u0_a129@192.168.0.103"
-alias off="sudo nala update && sudo nala upgrade && shutdown -P now"
+alias cconda='conda info --envs' # list all conda environments
+alias cenv="conda info --envs | awk '/\*/ {print}'" # list current conda environment
+alias pyshow="python --version && whereis python && echo && pip --version && whereis pip && echo && cenv" # python, pip, and conda env info
+alias off="sudo nala update && sudo nala upgrade -y && shutdown -P now"
+alias fl="xplr" # xplr file manager
