@@ -163,3 +163,4 @@ alias cenv="conda info --envs | awk '/\*/ {print}'" # list current conda environ
 alias pyshow="python --version && whereis python && echo && pip --version && whereis pip && echo && cenv" # python, pip, and conda env info
 alias off="sudo nala update && sudo nala upgrade -y && shutdown -P now"
 alias fl="xplr" # xplr file manager
+alias jackett="xdg-open http://127.0.0.1:9117" # jackett: qbittorrent search engine
