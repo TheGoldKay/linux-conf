@@ -1,4 +1,5 @@
 #!/bin/bash
+
 sudo apt install curl && sudo apt install nala # a better way of doing 'apt'
 sudo nala update && sudo nala upgrade # Update and upgrade before installing packages
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh # Sync, search and backup shell history with Atuin
@@ -30,3 +31,6 @@ brew install pyenv
 # xplr (terminal file manager written in Rust) + Also additional dependencies
 brew install ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick
 brew install xplr
+# qbittorrent -----> DOT NOT FORGET TO INSTALL :SEARCH PLUGINS: => JACKETT
+sudo nala install qbittorrent
+bash jackett_install.sh
