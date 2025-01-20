@@ -60,3 +60,7 @@ flatpak install org.torproject.torbrowser-launcher
 flatpak install com.microsoft.Edge
 # foliate
 flatpak install com.github.johnfactotum.Foliate
+# fastfetch (neofetch alternative)
+sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
+sudo nala update
+sudo nala install fastfetch

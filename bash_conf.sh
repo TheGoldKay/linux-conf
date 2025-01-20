@@ -117,8 +117,6 @@ if ! shopt -oq posix; then
 fi
 ##############################  >>> NEW CUSTOM IN MINT LINUX <<<
 
-neofetch # run neofetch on new terminal
-
 bind 'set completion-ignore-case on' # case insensitive tabbingexport PYENV_ROOT="$HOME/.pyenv"
 
 # >>> conda initialize >>>
@@ -164,3 +162,8 @@ alias pyshow="python --version && whereis python && echo && pip --version && whe
 alias off="sudo nala update && sudo nala upgrade -y && shutdown -P now"
 alias fl="xplr" # xplr file manager
 alias jackett="xdg-open http://127.0.0.1:9117" # jackett: qbittorrent search engine
+alias fetch="fastfetch" # fastfetch (neofetch alternative)
+
+# ------------- RUN BINARIES & SHELL SCRIPTS -------------- #
+
+fetch
