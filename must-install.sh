@@ -34,3 +34,29 @@ brew install xplr
 # qbittorrent -----> DOT NOT FORGET TO INSTALL :SEARCH PLUGINS: => JACKETT
 sudo nala install qbittorrent
 bash jackett_install.sh
+# stremio (streaming app) # https://www.reddit.com/r/StremioAddons/ # https://stremio-addons.com/
+flatpak install com.stremio.Stremio
+# bitwarden (password manager)
+flatpak install com.bitwarden.desktop
+# bottles (install windows apps on linux)
+flatpak install com.usebottles.bottles
+# wine
+sudo nala install wine
+# lutris (game manager)
+sudo nala install lutris #flatpak install net.lutris.Lutris
+# ZapZap
+flatpak install com.rtosta.zapzap
+# vscode
+flatpak install com.visualstudio.code #sudo nala install code
+# git
+sudo nala install git
+# vlc
+sudo nala install vlc]
+# ffmpeg 
+sudo nala install ffmpeg
+# tor browser
+flatpak install org.torproject.torbrowser-launcher
+# edge browser
+flatpak install com.microsoft.Edge
+# foliate
+flatpak install com.github.johnfactotum.Foliate
