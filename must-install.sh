@@ -32,7 +32,7 @@ brew install pyenv
 brew install ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide imagemagick
 brew install xplr
 # qbittorrent -----> DOT NOT FORGET TO INSTALL :SEARCH PLUGINS: => JACKETT
-sudo nala install qbittorrent
+sudo nala install qbittorrent # flatpak install org.qbittorrent.qBittorrent
 bash jackett_install.sh
 # stremio (streaming app) # https://www.reddit.com/r/StremioAddons/ # https://stremio-addons.com/
 flatpak install com.stremio.Stremio
