@@ -7,42 +7,29 @@
     "host",
     "kernel",
     "uptime",
-    "packages",
     "shell",
+    "initsystem",
     "display",
     "de",
-    "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
     "terminal",
-    "terminalfont",
+    "bootmgr",
+    "bios",
     "cpu",
+    "processes",
     "gpu",
+    "board",
     "memory",
     "swap",
+    "cpuusage",
     "disk",
     "localip",
-    "battery",
-    "poweradapter",
-    "locale",
     {
       "type": "command",
-      "text": "dpkg -l | wc -l",
-      "key": "Native (dpkg)"
+      "text": "curl ifconfig.me",
+      "key": "Public IP"
     },
-    {
-      "type": "command",
-      "text": "echo $(( $(brew list --cask | wc -l) + $(brew list | wc -l) ))",
-      "key": "Homebrew (brew)"
-    },
-    {
-      "type": "command",
-      "text": "flatpak list | wc -l",
-      "key": "Flathub (flatpak)"
-    },
+    "dns",
+    "packages",
     "break",
     "colors"
   ]
