@@ -64,3 +64,23 @@ flatpak install com.github.johnfactotum.Foliate
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo nala update
 sudo nala install fastfetch
+                                                        # other must have flatpak apps
+#  Flatseal is a graphical utility to review and modify permissions from your Flatpak applications.
+flatpak install flathub com.github.tchx84.Flatseal
+# Apps and fixes for Proton games
+# Protontricks is a simple wrapper that does winetricks things for Proton enabled games, requires Proton 5.0 or newer.
+flatpak install flathub com.github.Matoking.protontricks
+# Warehouse provides a simple UI to control complex Flatpak options, all without resorting to the command line.
+flatpak install flathub io.github.flattool.Warehouse
+# PortProton is a project designed to make it easy and convenient to run Windows games on Linux for both beginners and advanced users. 
+flatpak install flathub ru.linux_gaming.PortProton
+# This app allows you to send files and messages over the local LAN network.
+flatpak install flathub org.localsend.localsend_app
+# Keep an eye on system resources
+flatpak install flathub net.nokyan.Resources
+# Monitor your CPU, Memory, Disk, Network and GPU usage
+flatpak install flathub io.missioncenter.MissionCenter
+# Modern compatibility tools manager
+flatpak install flathub com.vysp3r.ProtonPlus
+# Virtualization made simple
+flatpak install flathub org.gnome.Boxes
