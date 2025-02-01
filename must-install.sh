@@ -84,3 +84,6 @@ flatpak install flathub io.missioncenter.MissionCenter
 flatpak install flathub com.vysp3r.ProtonPlus
 # Virtualization made simple
 flatpak install flathub org.gnome.Boxes
+# rust 
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+. $HOME/.cargo/env #same as: source $HOME/.cargo/env # set up path
