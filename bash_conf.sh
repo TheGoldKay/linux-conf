@@ -154,16 +154,54 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # cargo (RUST BINARIES)
 export PATH=$PATH:$HOME/.cargo/bin
 
-# -------------- ALIASES WILL BE KEPT AT THE END -------------- #
+# -------------- ALIASES && COMMANDS------------- #
 
 alias cconda='conda info --envs' # list all conda environments
 alias cenv="conda info --envs | awk '/\*/ {print}'" # list current conda environment
 alias pyshow="python --version && whereis python && echo && pip --version && whereis pip && echo && cenv" # python, pip, and conda env info
 alias off="sudo nala update && sudo nala upgrade -y && shutdown -P now"
 alias fl="xplr" # xplr file manager
-alias jackett="xdg-open http://127.0.0.1:9117" # jackett: qbittorrent search engine
+alias jackett="xdg-open http://127.0.0.1:9117/UI/Dashboard#search" # jackett: qbittorrent search engine
 alias fetch="fastfetch" # fastfetch (neofetch alternative)
 
-# ------------- RUN BINARIES & SHELL SCRIPTS -------------- #
+# Function to handle run commands with arguments
+run_command() {
+    if [ -z "$1" ]; then
+        echo "Usage: run [command] [args...]"
+        return 1
+    fi
+    
+    case "$1" in
+        "py"|"python")
+            python "${@:2}"
+            ;;
+        "rs"|"rust")
+            rustc "${@:2}" && ./"${2%.*}"
+            ;;
+        "js"|"node")
+            node "${@:2}"
+            ;;
+        "cpp")
+            g++ "${@:2}" -o output && ./output
+            ;;
+        *)
+            echo "Unknown command: $1"
+            echo "Available commands: py/python, js/node, rs/rust, cpp"
+            return 1
+            ;;
+    esac
+}
+
+# Replace the incomplete alias with the function
+alias run='run_command'
+
+# Example usage:
+# run py script.py
+# run js app.js
+# run rs main.rs
+# run cpp main.cpp
+
+# ------------- RUN BINARIES & SHELL SCRIPTS & ENVs-------------- #
 
 fetch
+. "$HOME/.cargo/env"
