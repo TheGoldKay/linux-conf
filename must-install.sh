@@ -87,3 +87,8 @@ flatpak install flathub org.gnome.Boxes
 # rust 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 . $HOME/.cargo/env #same as: source $HOME/.cargo/env # set up path
+
+# set up snap
+sudo mv /etc/apt/preferences.d/nosnap.pref ~/Documents/nosnap.backup # backup the file
+sudo apt update
+sudo apt install snapd
