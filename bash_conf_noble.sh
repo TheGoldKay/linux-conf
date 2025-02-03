@@ -115,93 +115,18 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-##############################  >>> NEW CUSTOM IN MINT LINUX <<< >>>> OLD: LINUX MINT 21 <<< REFER TO bash_conf_noble.sh
 
-bind 'set completion-ignore-case on' # case insensitive tabbing #export PYENV_ROOT="$HOME/.pyenv"
+##################################################### BASH CONF MINT 22 NOBLE #####################################################
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/goldkay/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/goldkay/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/goldkay/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/goldkay/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+bind 'set completion-ignore-case on' # case insensitive tabbing
 
+# rust toolchain
 
-# >>>> autin (shell history) init >>>>
+. "$HOME/.cargo/env"
+
+# atuin - shell history manager - log in for synchronization possible
+
 . "$HOME/.atuin/bin/env"
 
 [[ -f ~/.bash-preexec.sh ]] && source ~/.bash-preexec.sh
 eval "$(atuin init bash)"
-# <<<< autin (shell history) init <<<<
-
-# ----> ADDED PATHS TO GLOBAL <------
-
-# >>>> zoxide init >>>>
-export PATH=$PATH:$HOME/.local/bin
-eval "$(zoxide init bash)"
-
-# homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
-# cargo (RUST BINARIES)
-export PATH=$PATH:$HOME/.cargo/bin
-
-# -------------- ALIASES && COMMANDS------------- #
-
-alias cconda='conda info --envs' # list all conda environments
-alias cenv="conda info --envs | awk '/\*/ {print}'" # list current conda environment
-alias pyshow="python --version && whereis python && echo && pip --version && whereis pip && echo && cenv" # python, pip, and conda env info
-alias off="sudo nala update && sudo nala upgrade -y && shutdown -P now"
-alias fl="xplr" # xplr file manager
-alias jackett="xdg-open http://127.0.0.1:9117/UI/Dashboard#search" # jackett: qbittorrent search engine
-alias fetch="fastfetch" # fastfetch (neofetch alternative)
-
-# Function to handle run commands with arguments
-run_command() {
-    if [ -z "$1" ]; then
-        echo "Usage: run [command] [args...]"
-        return 1
-    fi
-    
-    case "$1" in
-        "py"|"python")
-            python "${@:2}"
-            ;;
-        "rs"|"rust")
-            rustc "${@:2}" && ./"${2%.*}"
-            ;;
-        "js"|"node")
-            node "${@:2}"
-            ;;
-        "cpp")
-            g++ "${@:2}" -o output && ./output
-            ;;
-        *)
-            echo "Unknown command: $1"
-            echo "Available commands: py/python, js/node, rs/rust, cpp"
-            return 1
-            ;;
-    esac
-}
-
-# Replace the incomplete alias with the function
-alias run='run_command'
-
-# Example usage:
-# run py script.py
-# run js app.js
-# run rs main.rs
-# run cpp main.cpp
-
-# ------------- RUN BINARIES & SHELL SCRIPTS & ENVs-------------- #
-
-fetch
-. "$HOME/.cargo/env"
