@@ -123,6 +123,11 @@ bind 'set completion-ignore-case on' # case insensitive tabbing
 # Add custom aliases
 alias obsidian="cd ~/Code/Obsidian && ./obsidian --disable-gpu --enable-unsafe-swiftshader"
 
+#bash function to open a link with firefox
+jackett() {
+    firefox "http://localhost:9117/UI/Dashboard#search=$1&filter=all"
+}
+
 # Atuin --> bash command history
 # log in (user): goldkay || password: bitwarden's vault
 . "$HOME/.atuin/bin/env"
@@ -132,3 +137,9 @@ eval "$(atuin init bash)"
 
 # rust toolchain config env
 . "$HOME/.cargo/env"
+
+
+# nvm config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
