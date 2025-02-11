@@ -122,6 +122,8 @@ bind 'set completion-ignore-case on' # case insensitive tabbing
 
 # Add custom aliases
 alias obsidian="cd ~/Code/Obsidian && ./obsidian --disable-gpu --enable-unsafe-swiftshader"
+# display python and pip versions compiled from source
+alias localpy="ls /usr/local/bin | grep python && echo '----------------------------------------' && ls /usr/local/bin | grep pip" 
 
 #bash function to open a link with firefox
 jackett() {
