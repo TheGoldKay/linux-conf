@@ -70,7 +70,21 @@ ZSH_THEME="bira" # other ones: gnzh, intheloop, smt, bira
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    dirhistory
+    sudo
+    z
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+
+# Zsh autosuggestions configuration
+#bindkey '^F' autosuggest-accept      # Ctrl+F to accept suggestion
+bindkey '^E' autosuggest-execute     # Ctrl+E to accept and execute
+bindkey '^ ' autosuggest-accept      # Ctrl+Space to accept
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 source $ZSH/oh-my-zsh.sh
 
@@ -102,3 +116,63 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+#                                               CUSTOM ZSH CONFIGURATION
+#                                                   Noble ZSH Config
+
+# Add custom aliases
+alias obsidian="cd ~/Code/Obsidian && ./obsidian --disable-gpu --enable-unsafe-swiftshader"
+# display python and pip versions compiled from source
+alias localpy="ls /usr/local/bin | grep python && echo '-----------------' && ls /usr/local/bin | grep pip" 
+# eze is to ls what nala is to apt
+alias lss="eza -Ll" # show directory content in a tree view
+
+# open jackett on firefox
+function jackett() {
+    firefox "http://localhost:9117/UI/Dashboard#search"
+}
+
+# Atuin --> shell command history
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
+# rust toolchain config env
+. "$HOME/.cargo/env"
+
+# nvm config
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
+
+# Created by `pipx`
+export PATH="$PATH:/home/goldkay/.local/bin"
+
+# Auto CD without using 'cd'
+setopt AUTO_CD
+
+# Extended globbing
+setopt EXTENDED_GLOB
+
+# History settings (add these near the top with other history settings)
+HISTSIZE=1000
+HISTFILESIZE=2000
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt APPEND_HISTORY
+
+# Enable color support for ls and grep
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Case insensitive globbing
+setopt NO_CASE_GLOB
+
+# Case insensitive completion (instead of bind command from bash)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
+

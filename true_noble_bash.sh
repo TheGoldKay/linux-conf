@@ -116,7 +116,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# --------------------------------------------------------------> Noble's Bash Config <------------------------------------------------------------------------------------
+# Noble Bash Config
 
 bind 'set completion-ignore-case on' # case insensitive tabbing
 
@@ -125,7 +125,7 @@ alias obsidian="cd ~/Code/Obsidian && ./obsidian --disable-gpu --enable-unsafe-s
 # display python and pip versions compiled from source
 alias localpy="ls /usr/local/bin | grep python && echo '----------------------------------------' && ls /usr/local/bin | grep pip" 
 # eze is to ls what nala is to apt
-alias lss="eze -Ll" # show directory content in a tree view
+alias lss="eza -Ll" # show directory content in a tree view
 
 #bash function to open a link with firefox
 jackett() {
