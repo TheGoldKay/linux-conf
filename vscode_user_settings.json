@@ -1,0 +1,85 @@
+{
+    "lövelauncher.useConsoleSubsystem": true,
+    "files.autoSave": "afterDelay",
+    "security.workspace.trust.untrustedFiles": "open",
+    "tabnine.experimentalAutoImports": true,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "lövelauncher.saveAllOnLaunch": true,
+    "workbench.settings.applyToAllProfiles": [
+        "pixelbyte.love2d.path",
+        "lövelauncher.path",
+        "luahelper.colors.Global Fun Color",
+        "luahelper.colors.Global Field Color",
+        "C_Cpp_Runner.includePaths",
+        "C_Cpp.autocomplete",
+        "C_Cpp.autoAddFileAssociations"
+    ],
+    "explorer.confirmDelete": false,
+    "codeium.enableConfig": {
+        "*": true,
+        "markdown": true,
+        "plaintext": true,
+        "moonscript": true,
+        "ignore": true
+    },
+    "pixelbyte.love2d.path": "C:\\Program Files\\LOVE\\love",
+    "love2d-executor.path": "C:\\Program Files\\LOVE",
+    "defold.editorPath": "C:\\Users\\jhonn\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Steam\\Defold.url",
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "luahelper.colors.Global Fun Color": " #09d6d8",
+    "luahelper.colors.Global Field Color": " #08d045",
+    "luahelper.colors.Type(annotation) Color": "#d84b09",
+    "cmake.configureOnOpen": true,
+    "C_Cpp_Runner.includePaths": [
+        "C:/raylib/raylib/src/",
+        "C:\\raylib\\raylib\\src\\"
+    ],
+    "window.customTitleBarVisibility": "auto",
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "/usr/bin/bash",
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "/usr/bin/zsh",
+            "icon": "terminal-powershell"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        },
+        "sh": {
+            "path": "/bin/sh"
+        },
+        "dash": {
+            "path": "/usr/bin/dash"
+        },
+        "rbash": {
+            "path": "/bin/rbash"
+        }
+    },
+    "terminal.integrated.inheritEnv": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "C_Cpp.autoAddFileAssociations": false,
+    "chatgpt.lang": "en",
+    "cmake.options.statusBarVisibility": "visible",
+    "workbench.colorTheme": "GDScript",
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "rust-analyzer.check.command": "clippy",
+    "[rust]":{
+        "editor.defaultFormatter": "rust-lang.rust-analyzer",
+        "editor.formatOnSave": true
+    }
+}
