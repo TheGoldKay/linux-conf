@@ -175,4 +175,6 @@ setopt NO_CASE_GLOB
 # Case insensitive completion (instead of bind command from bash)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
+# aliases
 
+alias python3="$(which python)"
