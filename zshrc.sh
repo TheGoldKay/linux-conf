@@ -70,6 +70,7 @@ ZSH_THEME="bira" # other ones: gnzh, intheloop, smt, bira
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(
     git
     dirhistory
@@ -120,17 +121,65 @@ source $ZSH/oh-my-zsh.sh
 #                                               CUSTOM ZSH CONFIGURATION
 #                                                   Noble ZSH Config
 
-# Add custom aliases
-alias obsidian="cd ~/Code/Obsidian && ./obsidian --disable-gpu --enable-unsafe-swiftshader"
-# display python and pip versions compiled from source
-alias localpy="ls /usr/local/bin | grep python && echo '-----------------' && ls /usr/local/bin | grep pip" 
-# eze is to ls what nala is to apt
-alias lss="eza -Ll" # show directory content in a tree view
+# ~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~~~~~~~~~
 
-# open jackett on firefox
-function jackett() {
-    firefox "http://localhost:9117/UI/Dashboard#search"
-}
+alias c='clear'
+alias home='cd ~'
+alias back='cd -'
+alias ls='ls --color=auto'
+# Show hidden files 
+alias l.='ls -d .* --color=auto'
+# powered up ls, similar to 'ls -lathr'
+alias la='exa -laghm@ --all --icons --git --color=always'
+# go back to win/wsl shared folders
+alias win='cd /mnt/c/Users/jhonn'
+# finds all files recursively and sorts by last modification, ignore hidden files
+alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lrt {} +'
+# if nala isn't installed: sudo apt install nala
+alias update='sudo nala update && sudo nala upgrade' 
+## a quick way to get out of current directory ##
+alias .1='cd ../'
+alias .2='cd ../../'
+alias .3='cd ../../../'
+alias .4='cd ../../../../'
+## Colorize the grep command output for ease of use (good for log files)##
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias path='echo -e ${PATH//:/\\n}'
+# become root #
+alias root='sudo -i'
+# cargo gun without warnings
+alias rustrun='RUSTFLAGS="-Awarnings" cargo run'
+
+# ~~~~~~~~~~~~~~~ History ~~~~~~~~~~~~~~~~~~~~~~~~
+
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
+setopt HIST_IGNORE_DUPS   # Don't save duplicate lines
+setopt SHARE_HISTORY      # Share history between sessions
+
+# ~~~~~~~~~~~~~~~ Path configuration ~~~~~~~~~~~~~~~
+
+
+setopt extended_glob null_glob
+
+path=(
+    $path                           # Keep existing PATH entries
+    $HOME/bin
+    $HOME/.local/bin
+)
+
+# Remove duplicate entries and non-existent directories
+typeset -U path
+path=($^path(N-/))
+
+export PATH
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Atuin --> shell command history
 . "$HOME/.atuin/bin/env"
@@ -139,42 +188,5 @@ eval "$(atuin init zsh)"
 # rust toolchain config env
 . "$HOME/.cargo/env"
 
-# nvm config
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
-
-# Created by `pipx`
-export PATH="$PATH:/home/goldkay/.local/bin"
-
-# Auto CD without using 'cd'
-setopt AUTO_CD
-
-# Extended globbing
-setopt EXTENDED_GLOB
-
-# History settings (add these near the top with other history settings)
-HISTSIZE=1000
-HISTFILESIZE=2000
-setopt HIST_IGNORE_SPACE
-setopt HIST_IGNORE_DUPS
-setopt APPEND_HISTORY
-
-# Enable color support for ls and grep
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# Case insensitive globbing
-setopt NO_CASE_GLOB
-
-# Case insensitive completion (instead of bind command from bash)
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-
-# aliases
-
-alias python3="$(which python)"
+# start at home directory (set up for wsl)
+home
