@@ -151,6 +151,8 @@ alias path='echo -e ${PATH//:/\\n}'
 alias root='sudo -i'
 # cargo gun without warnings
 alias rustrun='RUSTFLAGS="-Awarnings" cargo run'
+# show main python packages
+alias pshow='pip list --not-required'
 
 # ~~~~~~~~~~~~~~~ History ~~~~~~~~~~~~~~~~~~~~~~~~
 
