@@ -191,4 +191,9 @@ eval "$(atuin init zsh)"
 . "$HOME/.cargo/env"
 
 # start at home directory (set up for wsl)
-home
+#home
+
+. "$HOME/.local/bin/env"
+
+# VcXsrv / X server on Windows to set up WSl Display -> Works for Love2d (X11 Forwarding)
+export DISPLAY=:0 # set the display to 0 when starting XLaunch
