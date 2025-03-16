@@ -193,7 +193,27 @@ eval "$(atuin init zsh)"
 # start at home directory (set up for wsl)
 #home
 
-. "$HOME/.local/bin/env"
+#. "$HOME/.local/bin/env"
 
 # VcXsrv / X server on Windows to set up WSl Display -> Works for Love2d (X11 Forwarding)
-export DISPLAY=:0 # set the display to 0 when starting XLaunch
+#export DISPLAY=:0 # set the display to 0 when starting XLaunch
+
+# node | nvm | npm -> config
+
+# Download and install nvm:
+#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+
+# in lieu of restarting the shell
+#\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js (latest version)
+#nvm install node
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pulseaudio -> FIX AUDIO FOR LOVE2D GAME DEV
+# install -> sudo nala install pulseaudio
+# on 'sudo micro /etc/pulse/default.pa' -> load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
+#export PULSE_SERVER=127.0.0.1
