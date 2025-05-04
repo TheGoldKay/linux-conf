@@ -217,3 +217,9 @@ export NVM_DIR="$HOME/.nvm"
 # install -> sudo nala install pulseaudio
 # on 'sudo micro /etc/pulse/default.pa' -> load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
 #export PULSE_SERVER=127.0.0.1
+
+# ruby version manager
+eval "$(~/.local/bin/mise activate)"
+
+# rails shortcut
+alias rs="bin/rails"
